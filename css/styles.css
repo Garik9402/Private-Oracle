@@ -3,11 +3,10 @@
 .header-w {
   position: relative;
   background: url(../images/header__bacground.png) 50% no-repeat;
-  max-width: 100%;
+  width: 100%;
   background-size: cover;
-  height: 833px;
+  min-height: 833px;
   padding-top: 24px;
-  padding-bottom: 167px;
 }
 
 .header-w .header {
@@ -25,11 +24,17 @@
           justify-content: space-between;
 }
 
-.header-w .header .header-top__main {
+.header-w .header .header-top__continerswrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 16px;
+}
+
+.header-w .header .header-top__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header-w .header .header-top__main .nav {
@@ -56,14 +61,14 @@
   text-decoration: none;
 }
 
-.header-w .header .header-top__main .header-searchlogin {
+.header-w .header .header-top .header-searchlogin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-left: 42px;
 }
 
-.header-w .header .header-top__main .header-searchlogin__search {
+.header-w .header .header-top .header-searchlogin__search {
   position: relative;
   width: 49px;
   height: 49px;
@@ -71,7 +76,7 @@
   border-radius: 50%;
 }
 
-.header-w .header .header-top__main .header-searchlogin__login {
+.header-w .header .header-top .header-searchlogin__login {
   width: 99px;
   height: 40px;
   margin-left: 53px;
@@ -118,5 +123,48 @@
   line-height: 38px;
   letter-spacing: 0.1em;
   color: #FF9F00;
+}
+
+.psychicadvisor-w {
+  width: 100%;
+}
+
+.psychicadvisor-w .psychicadvisor {
+  width: 100%;
+}
+
+.psychicadvisor-w .psychicadvisor__title {
+  width: 100%;
+  height: 150px;
+  background: #09B3B0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Yrsa';
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 40px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 1280px) {
+  .header .header-top__continerswrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .header .header-top__continerswrap .header-searchlogin {
+    margin-left: 0px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

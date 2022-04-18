@@ -15,9 +15,15 @@
     <section class="header-w">
         <header class="header">
             <div class="header-top">
-                <a href="#" class="header-top__logolink">
-                    <img src="images/header__logo.png" alt="img" class="header__logo">
-                </a>
+                <div class="header-top__logoburger">
+                    <a href="#" class="header-top__logolink">
+                        <img src="images/header__logo.png" alt="img" class="header__logo">
+                    </a>
+
+                    <div class="burger">
+                        <span></span>
+                    </div>
+                </div>
                 <div class="header-top__continerswrap">
                     <div class="header-top__main">
                         <nav class="nav">
@@ -61,6 +67,20 @@
         </div>
 
     </section>
+
+    <script>
+        let burgerNode = document.querySelector('.burger')
+        let mainNode = document.querySelector('.header-top__continerswrap')
+        burgerNode.addEventListener('click', function() {
+            burgerNode.classList.toggle('active')
+            mainNode.classList.toggle('active2')
+
+        })
+    </script>
+
+
+
+
 
 </body>
 

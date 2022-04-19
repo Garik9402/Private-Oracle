@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
 </head>
@@ -29,7 +27,7 @@
                         <nav class="nav">
                             <ul class="nav__list">
                                 <li class="nav__items">
-                                    <a href="#" class="main__link">Home</a>
+                                    <a href="#" class="main__link activelink">Home</a>
                                 </li>
                                 <li class="nav__items">
                                     <a href="#" class="main__link">Client Registration</a>
@@ -44,7 +42,10 @@
                         </nav>
                     </div>
                     <div class="header-searchlogin">
-                        <a href="#" class="header-searchlogin__search"></a>
+                        <div class="header-searchlogin__search">
+                            <div class="header-searchlogin__icon"></div>
+                            <input type="text" class="inputtext" placeholder=" Введите название">
+                        </div>
                         <a href="#" class="header-searchlogin__login">
                             <span> Log in</span> </a>
                     </div>
@@ -62,19 +63,49 @@
     <section class="psychicadvisor-w">
         <div class="psychicadvisor">
             <div class="psychicadvisor__title">Find Your Best Psychic Advisor</div>
-
+            <div class="advisors-w">
+                <div class="advisors__continer">
+                    <div class="advisor">
+                        <img src="" alt="" class="advisor__img">
+                        <div class="advisor__description"></div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
     </section>
 
     <script>
+        //nav item
+        const linksNode = document.querySelectorAll('.main__link')
+        for (let i = 0; i < linksNode.length; i++) {
+            linksNode[i].addEventListener('mouseover', function() {
+                for (let b = 0; b < linksNode.length; b++) {
+                    linksNode[b].classList.remove('activelink')
+                }
+                this.classList.add('activelink')
+            })
+        }
+
+        //search
+        let searchNode = document.querySelector('.header-searchlogin__icon, .inputtext')
+        let inputNode = document.querySelector('.inputtext')
+
+        window.addEventListener('click', function(e) {
+            if (searchNode.contains(e.target) || inputNode.contains(e.target)) {
+                inputNode.classList.add('inputactive')
+            } else {
+                inputNode.classList.remove('inputactive')
+            }
+        });
+
+        //burger
         let burgerNode = document.querySelector('.burger')
         let mainNode = document.querySelector('.header-top__continerswrap')
         burgerNode.addEventListener('click', function() {
             burgerNode.classList.toggle('active')
             mainNode.classList.toggle('active2')
-
         })
     </script>
 

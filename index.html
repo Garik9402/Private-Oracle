@@ -62,57 +62,27 @@
     </section>
     <section class="psychicadvisor-w">
         <div class="psychicadvisor">
-            <div class="psychicadvisor__title">Find Your Best Psychic Advisor</div>
-            <div class="advisors-w">
-                <div class="advisors__continer">
-                    <div class="advisor">
-                        <img src="" alt="" class="advisor__img">
-                        <div class="advisor__description"></div>
-                    </div>
+            <div class="psychicadvisor__img"></div>
+            <div class="psychicadvisor__contenttitle"></div>
+            <div class="psychicadvisor__contentp"></div>
+        </div>
+        <div class="psychicadvisor__title">Find Your Best Psychic Advisor</div>
+        <div class="advisors-w">
+            <div class="advisors__continer">
+                <div class="advisor">
+                    <img src="" alt="" class="advisor__img">
+                    <div class="advisor__description"></div>
                 </div>
             </div>
-
         </div>
-
+        </div>
     </section>
-
-    <script>
-        //nav item
-        const linksNode = document.querySelectorAll('.main__link')
-        for (let i = 0; i < linksNode.length; i++) {
-            linksNode[i].addEventListener('mouseover', function() {
-                for (let b = 0; b < linksNode.length; b++) {
-                    linksNode[b].classList.remove('activelink')
-                }
-                this.classList.add('activelink')
-            })
-        }
-
-        //search
-        let searchNode = document.querySelector('.header-searchlogin__icon, .inputtext')
-        let inputNode = document.querySelector('.inputtext')
-
-        window.addEventListener('click', function(e) {
-            if (searchNode.contains(e.target) || inputNode.contains(e.target)) {
-                inputNode.classList.add('inputactive')
-            } else {
-                inputNode.classList.remove('inputactive')
-            }
-        });
-
-        //burger
-        let burgerNode = document.querySelector('.burger')
-        let mainNode = document.querySelector('.header-top__continerswrap')
-        burgerNode.addEventListener('click', function() {
-            burgerNode.classList.toggle('active')
-            mainNode.classList.toggle('active2')
-        })
-    </script>
-
-
-
-
-
+    <div class="parent__button">
+        <button type="button" class="button button--color-orange button--icont-phone"></button>
+        <button type="button" class="button button--color-green button--icont-chat"></button>
+        <button type="button" class="button button--color-green button--size-lg"></button>
+    </div>
+    <script src="js/static.js"></script>
 </body>
 
 </html>

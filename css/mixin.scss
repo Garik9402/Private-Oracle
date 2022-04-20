@@ -1,4 +1,3 @@
-// Media Queries
 $breakpoints: ( "sm": 368px, "md": 576px, "lg": 768px, "xl": 992px, "xxl": 1280px, );
 @mixin mq($width, $type: max) {
     @if map_has_key($breakpoints, $width) {

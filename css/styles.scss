@@ -1,401 +1,338 @@
-@import 'reset.scss';
-@import 'fonts.scss';
-@import 'mixin.scss';
-.header-w {
-    position: relative;
-    background: url(../images/header__bacground.png) 50% no-repeat;
-    width: 100%;
-    background-size: cover;
-    min-height: 833px;
-    padding-top: 24px;
-    @include mq(xxl) {}
-    @include mq(xl) {}
-    @include mq(lg) {}
-    @include mq(md) {}
-    @include mq(sm) {}
-    .header {
-        max-width: 1516px;
-        width: 100%;
-        margin: 0 auto;
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            &__logoburger {
-                display: flex;
-            }
-            .header__logo {
-                max-width: 354px;
-                width: 100%;
-            }
-            &__continerswrap {
-                display: flex;
-                margin-top: 16px;
-            }
-            &__main {
-                display: flex;
-                .nav {
-                    margin-top: 9px;
-                    &__list {
-                        display: flex;
-                        list-style: none;
-                    }
-                    &__items:not(:first-child) {
-                        margin-left: 50px;
-                    }
-                    .main__link {
-                        position: relative;
-                        display: block;
-                        font-family: 'Roboto';
-                        font-weight: 400;
-                        font-size: 18px;
-                        line-height: 23px;
-                        color: #09B3B0;
-                        text-decoration: none;
-                        &:hover {
-                            color: #FF9F00;
-                        }
-                        &.activelink:hover::before {
-                            content: '';
-                            position: absolute;
-                            width: 100%;
-                            height: 2px;
-                            background-color: #FF9F00;
-                            bottom: 0;
-                            left: 0;
-                        }
-                    }
-                }
-            }
-            .header-searchlogin {
-                display: flex;
-                margin-left: 42px;
-                &__icon {
-                    display: block;
-                    width: 49px;
-                    height: 49px;
-                    background: url(../images/search__icon.png) 55% no-repeat, #09B3B0 url(../images/icon__element.png) 48% 35% no-repeat;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: #FF9F00;
-                    }
-                }
-                &__search {
-                    position: relative;
-                    .inputtext {
-                        position: absolute;
-                        height: 0;
-                        min-height: 0;
-                        overflow: hidden;
-                        opacity: 0;
-                        right: 15px;
-                        top: 52px;
-                        outline: none;
-                        border: 1px solid #FF9F00;
-                        color: #09B3B0;
-                        font-size: 20px;
-                        &.inputactive {
-                            position: absolute;
-                            width: 380px;
-                            height: 30px;
-                            min-height: 5px;
-                            overflow: visible;
-                            opacity: 1;
-                            padding-left: 10px;
-                            transition: all 0.3s ease;
-                        }
-                    }
-                }
-                &__login {
-                    width: 99px;
-                    height: 40px;
-                    margin-left: 53px;
-                    padding: 8px 24px;
-                    display: inline-block;
-                    background-color: #09B3B0;
-                    font-family: 'Roboto';
-                    font-weight: 500;
-                    font-size: 18px;
-                    line-height: 23px;
-                    color: #FFFFFF;
-                    text-decoration: none;
-                    &:hover {
-                        background-color: #FF9F00;
-                    }
-                }
-            }
-        }
-        .header-titles {
-            margin-top: 112px;
-            &__top {
-                font-family: 'Winter Insight';
-                font-weight: 400;
-                font-size: 135px;
-                line-height: 96.32%;
-                color: #FF9F00;
-                margin-bottom: 67px;
-            }
-            &__middle {
-                font-family: 'Winter Insight';
-                font-weight: 400;
-                font-size: 30px;
-                line-height: 38px;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                color: #000000;
-                margin-bottom: 22px;
-            }
-            &__bottom {
-                font-family: 'Yrsa';
-                font-weight: 400;
-                font-size: 64px;
-                line-height: 38px;
-                letter-spacing: 0.1em;
-                color: #FF9F00;
-            }
-        }
-    }
-}
-
-.psychicadvisor-w {
-    width: 100%;
-    .psychicadvisor {
-        width: 100%;
-        &__title {
-            width: 100%;
-            height: 150px;
-            background: #09B3B0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Yrsa';
-            font-weight: 400;
-            font-size: 72px;
-            line-height: 40px;
-            color: #FFFFFF;
-        }
-    }
-}
-
-@media (max-width: 1280px) {
-    .header {
-        .header-top {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-}
-
-@media (max-width: 992px) {
+    @import 'reset.scss';
+    @import 'fonts.scss';
+    @import 'mixin.scss';
     .header-w {
+        position: relative;
+        background: url(../images/header__bacground.png) 50% no-repeat;
+        background-size: cover;
+        width: 100%;
+        min-height: 833px;
+        padding-top: 24px;
+        @include mq(xxl) {}
+        @include mq(xl) {}
+        @include mq(lg) {
+            padding-top: 0px;
+        }
+        @include mq(md) {}
+        @include mq(sm) {}
         .header {
-            .header-top__main {
-                .nav__items:not(:first-child) {
-                    margin-left: 25px;
-                }
-            }
-        }
-    }
-    .psychicadvisor-w {
-        width: 100%;
-        .psychicadvisor {
+            max-width: 1516px;
             width: 100%;
-            &__title {
-                font-size: 60px;
-            }
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .header-w {
-        padding-top: 0px;
-        header {
-            position: relative;
-            .header-top {
+            margin: 0 auto;
+            @include mq(lg) {
                 position: relative;
-                background-color: #FDE5E6;
-                padding: 0px 15px;
-                .header-top__logoburger {
-                    width: 100%;
+            }
+            .header-top {
+                display: flex;
+                justify-content: space-between;
+                @include mq(xxl) {
+                    flex-direction: column;
                     align-items: center;
-                    justify-content: space-between;
-                    z-index: 2;
-                    .burger {
-                        display: block;
-                        position: relative;
-                        max-width: 40px;
+                }
+                @include mq(lg) {
+                    position: relative;
+                    background-color: #FDE5E6;
+                    padding: 0px 15px;
+                }
+                &__logoburger {
+                    display: flex;
+                    .header__logo {
+                        max-width: 354px;
                         width: 100%;
-                        height: 40px;
-                        &::before,
-                        &::after {
-                            content: '';
-                            position: absolute;
+                    }
+                    @include mq(lg) {
+                        width: 100%;
+                        align-items: center;
+                        justify-content: space-between;
+                        z-index: 2;
+                        .burger {
+                            display: block;
+                            position: relative;
+                            max-width: 40px;
                             width: 100%;
-                            height: 3px;
-                            background-color: #09B3B0;
-                        }
-                        &::before {
-                            top: 1px;
-                        }
-                        &::after {
-                            bottom: 0;
-                        }
-                        & span {
-                            position: absolute;
-                            width: 100%;
-                            height: 3px;
-                            background-color: #09B3B0;
-                            top: 19px;
-                        }
-                        &.active::before {
-                            transform: rotate(-45deg);
-                            top: 20px;
-                            transition: all 0.2s ease;
-                        }
-                        &.active::after {
-                            transform: rotate(45deg);
-                            bottom: 17px;
-                            transition: all 0.2s ease;
-                        }
-                        &.active span {
-                            transform: scale(0);
+                            height: 40px;
+                            &::before,
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 3px;
+                                background-color: #09B3B0;
+                            }
+                            &::before {
+                                top: 1px;
+                            }
+                            &::after {
+                                bottom: 0;
+                            }
+                            & span {
+                                position: absolute;
+                                width: 100%;
+                                height: 3px;
+                                background-color: #09B3B0;
+                                top: 19px;
+                            }
+                            &.active::before {
+                                transform: rotate(-45deg);
+                                top: 20px;
+                                transition: all 0.2s ease;
+                            }
+                            &.active::after {
+                                transform: rotate(45deg);
+                                bottom: 17px;
+                                transition: all 0.2s ease;
+                            }
+                            &.active span {
+                                transform: scale(0);
+                            }
                         }
                     }
                 }
-                .header-top__continerswrap {
-                    display: none;
-                    .header-top__main {
-                        display: flex;
+                &__continerswrap {
+                    display: flex;
+                    margin-top: 16px;
+                    @include mq(lg) {
+                        display: none;
+                        &.active2 {
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            padding: 150px 15px 0px;
+                            display: flex;
+                            flex-direction: column-reverse;
+                            justify-content: start;
+                            width: 100%;
+                            min-height: 832px;
+                            z-index: 1;
+                            background-color: #FDE5E6;
+                            margin: 0px;
+                        }
+                    }
+                }
+                &__main {
+                    display: flex;
+                    @include mq(lg) {
                         justify-content: center;
-                        .nav {
-                            &__list {
+                    }
+                    .nav {
+                        margin-top: 9px;
+                        &__list {
+                            display: flex;
+                            list-style: none;
+                            @include mq(lg) {
                                 display: flex;
                                 flex-direction: column;
                                 align-items: center;
                                 margin-top: 60px;
                             }
-                            &__items:not(:first-child) {
+                        }
+                        &__items:not(:first-child) {
+                            margin-left: 50px;
+                            @include mq(xl) {
+                                margin-left: 25px;
+                            }
+                            @include mq(lg) {
                                 margin-left: 0px;
                                 margin-top: 100px;
                             }
-                            .main__link {
+                        }
+                        .main__link {
+                            position: relative;
+                            display: block;
+                            font-family: 'Roboto';
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 23px;
+                            color: #09B3B0;
+                            text-decoration: none;
+                            @include mq(lg) {
                                 font-size: 50px;
                             }
-                        }
-                    }
-                    &.active2 {
-                        position: absolute;
-                        top: 0px;
-                        left: 0px;
-                        padding: 150px 15px 0px;
-                        display: flex;
-                        flex-direction: column-reverse;
-                        justify-content: start;
-                        width: 100%;
-                        min-height: 832px;
-                        z-index: 1;
-                        background-color: #FDE5E6;
-                        margin: 0px;
-                    }
-                    .header-searchlogin {
-                        display: flex;
-                        justify-content: end;
-                        margin-left: 0px;
-                    }
-                }
-            }
-        }
-    }
-    .psychicadvisor-w {
-        width: 100%;
-        .psychicadvisor {
-            width: 100%;
-            &__title {
-                height: 100px;
-                font-size: 45px;
-            }
-        }
-    }
-}
-
-@media (max-width: 576px) {
-    .header-w {
-        .header {
-            .header-top {
-                .header-top__continerswrap {
-                    .header-top__main {
-                        .nav__list {
-                            .main__link {
+                            @include mq(md) {
                                 font-size: 28px;
+                            }
+                            &:hover {
+                                color: #FF9F00;
+                            }
+                            &:hover::before {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 2px;
+                                background-color: #FF9F00;
+                                bottom: 0;
+                                left: 0;
                             }
                         }
                     }
                 }
                 .header-searchlogin {
-                    flex-direction: column-reverse;
-                    align-items: flex-end;
+                    display: flex;
+                    margin-left: 42px;
+                    @include mq(lg) {
+                        display: flex;
+                        justify-content: end;
+                        margin-left: 0px;
+                    }
+                    @include mq(md) {
+                        flex-direction: column-reverse;
+                        align-items: flex-end;
+                    }
+                    &__icon {
+                        display: block;
+                        width: 49px;
+                        height: 49px;
+                        background: url(../images/search__icon.png) 55% no-repeat, #09B3B0 url(../images/icon__element.png) 48% 35% no-repeat;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: #FF9F00;
+                        }
+                    }
                     &__search {
-                        margin-top: 10px;
+                        position: relative;
+                        @include mq(md) {
+                            margin-top: 10px;
+                        }
                         .inputtext {
+                            position: absolute;
+                            height: 0;
+                            min-height: 0;
+                            overflow: hidden;
+                            opacity: 0;
+                            right: 15px;
+                            top: 52px;
+                            outline: none;
+                            border: 1px solid #FF9F00;
+                            color: #09B3B0;
+                            font-size: 20px;
                             &.inputactive {
                                 position: absolute;
-                                width: 215px;
+                                width: 380px;
                                 height: 30px;
                                 min-height: 5px;
                                 overflow: visible;
                                 opacity: 1;
                                 padding-left: 10px;
                                 transition: all 0.3s ease;
+                                @include mq(md) {
+                                    position: absolute;
+                                    width: 215px;
+                                    height: 30px;
+                                    min-height: 5px;
+                                    overflow: visible;
+                                    opacity: 1;
+                                    padding-left: 10px;
+                                    transition: all 0.3s ease;
+                                }
                             }
+                        }
+                    }
+                    &__login {
+                        width: 99px;
+                        height: 40px;
+                        margin-left: 53px;
+                        padding: 8px 24px;
+                        display: inline-block;
+                        background-color: #09B3B0;
+                        font-family: 'Roboto';
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 23px;
+                        color: #FFFFFF;
+                        text-decoration: none;
+                        &:hover {
+                            background-color: #FF9F00;
                         }
                     }
                 }
             }
-            .header-titles {
+        }
+    }
+    
+    .header-titles {
+        margin-top: 112px;
+        padding: 0 15px;
+        @include mq(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 112px;
+        }
+        &__top {
+            font-family: 'Winter Insight';
+            font-weight: 400;
+            font-size: 135px;
+            line-height: 96.32%;
+            color: #FF9F00;
+            margin-bottom: 67px;
+            @include mq(md) {
+                font-family: 'Winter Insight';
+                font-weight: 400;
+                font-size: 90px;
+                line-height: 96.32%;
+                color: #FF9F00;
+                margin-bottom: 67px;
+                text-align: center;
+            }
+        }
+        &__middle {
+            font-family: 'Winter Insight';
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 38px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 22px;
+            @include mq(md) {
+                text-align: center;
+            }
+        }
+        &__bottom {
+            font-family: 'Yrsa';
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 38px;
+            letter-spacing: 0.1em;
+            color: #FF9F00;
+            @include mq(md) {
+                text-align: center;
+            }
+        }
+    }
+    
+    .psychicadvisor-w {
+        width: 100%;
+        .psychicadvisor {
+            width: 100%;
+            &__title {
+                width: 100%;
+                height: 150px;
+                background: #09B3B0;
                 display: flex;
-                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                margin-top: 112px;
-                &__top {
-                    font-family: 'Winter Insight';
-                    font-weight: 400;
-                    font-size: 90px;
-                    line-height: 96.32%;
-                    color: #FF9F00;
-                    margin-bottom: 67px;
-                    text-align: center;
+                font-family: 'Yrsa';
+                font-weight: 400;
+                font-size: 72px;
+                line-height: 40px;
+                color: #FFFFFF;
+                @include mq(xl) {
+                    font-size: 60px;
                 }
-                &__middle {
-                    text-align: center;
+                @include mq(lg) {
+                    height: 100px;
+                    font-size: 45px;
                 }
-                &__bottom {
-                    text-align: center;
+                @include mq(md) {
+                    height: 80px;
+                    font-size: 30px;
+                }
+                @include mq(sm) {
+                    height: 60px;
+                    font-size: 25px;
                 }
             }
         }
     }
-    .psychicadvisor-w {
-        width: 100%;
-        .psychicadvisor {
-            width: 100%;
-            &__title {
-                height: 80px;
-                font-size: 30px;
-            }
-        }
-    }
-}
-
-@media (max-width: 368px) {
-    .psychicadvisor-w {
-        width: 100%;
-        .psychicadvisor {
-            width: 100%;
-            &__title {
-                height: 60px;
-                font-size: 25px;
-            }
-        }
-    }
-}

@@ -517,8 +517,16 @@
     }
 }
 
+.contents-wrapper {
+    width: 100%;
+    height: 1920px;
+    background: url(../images/Faq__img.png) no-repeat;
+    background-size: cover;
+}
+
 .oracle-w {
     width: 100%;
+    background: #EDF8F9;
     .oracle {
         max-width: 1050.5px;
         width: 100%;
@@ -534,10 +542,110 @@
         }
         &__row {
             width: 100%;
+            display: flex;
+            justify-content: space-between;
         }
         &__column {
             max-width: 290px;
             width: 100%;
+        }
+        .item-oracle {
+            width: 100%;
+            &__img {
+                margin-left: 80px;
+            }
+            &__title {
+                font-family: 'Segoe UI';
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 29px;
+                color: #0099A8;
+                margin-top: 8px;
+            }
+            &__text {
+                font-family: 'Segoe UI';
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.42px;
+                color: #3C3935;
+                margin-top: 6px;
+            }
+            &__link {
+                font-family: 'Segoe UI';
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                letter-spacing: 0.42px;
+                color: #0099A8;
+                text-decoration: none;
+                margin-left: 80px;
+                &:hover {
+                    color: #FF9F00;
+                }
+            }
+        }
+    }
+}
+
+.faqs-w {
+    width: 100%;
+}
+
+.faqs {
+    max-width: 1064px;
+    width: 100%;
+    margin: 39px auto 0px;
+    &__title {
+        text-align: center;
+    }
+    .title {
+        font-family: 'Yrsa';
+        font-weight: 400;
+        font-size: 43px;
+        line-height: 48px;
+        letter-spacing: 1px;
+        color: #09292F;
+    }
+    &__text {
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        color: #09292F;
+        margin-top: 31px;
+    }
+    &__row {
+        max-width: 896px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+    &__column {
+        max-width: 331px;
+        width: 100%;
+    }
+    .items__faqs {
+        width: inherit;
+    }
+    .nav {
+        &__list {
+            list-style: none;
+        }
+        &__items:not(:first-child) {
+            margin-top: 9px;
+        }
+        .main__link {
+            font-family: 'Roboto';
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 23px;
+            color: #008080;
+            text-decoration: none;
+            &:hover {
+                color: #FF9F00;
+            }
         }
     }
 }

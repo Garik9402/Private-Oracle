@@ -336,7 +336,7 @@
 .psychicadvisor-w {
     position: relative;
     width: 100%;
-    min-height: 923px;
+    min-height: 764px;
     background: url(../images/psychicadvisor-img.png) no-repeat;
     background-size: cover;
     .psychicadvisor {
@@ -519,7 +519,7 @@
 
 .contents-wrapper {
     width: 100%;
-    height: 1920px;
+    min-height: 1748px;
     background: url(../images/Faq__img.png) no-repeat;
     background-size: cover;
 }
@@ -539,15 +539,36 @@
             text-align: center;
             text-transform: uppercase;
             color: #3C3935;
+            @include mq(md) {
+                font-size: 40px;
+                line-height: 140px;
+            }
+            @include mq(sm) {}
         }
         &__row {
             width: 100%;
             display: flex;
             justify-content: space-between;
+            @include mq(xl) {
+                padding: 0 15px;
+                justify-content: space-around;
+            }
+            @include mq(lg) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         &__column {
             max-width: 290px;
             width: 100%;
+            &:last-child {
+                @include mq(xl) {
+                    display: none;
+                }
+            }
+            @include mq(lg) {
+                margin-top: 20px;
+            }
         }
         .item-oracle {
             width: 100%;
@@ -596,8 +617,14 @@
     max-width: 1064px;
     width: 100%;
     margin: 39px auto 0px;
+    @include mq(xl) {
+        padding: 0 15px;
+    }
     &__title {
         text-align: center;
+        &:not(:first-child) {
+            margin-top: 100px;
+        }
     }
     .title {
         font-family: 'Yrsa';
@@ -621,10 +648,18 @@
         display: flex;
         justify-content: space-between;
         margin-top: 15px;
+        @include mq(lg) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__column {
         max-width: 331px;
         width: 100%;
+        @include mq(lg) {
+            margin-top: 9px;
+        }
     }
     .items__faqs {
         width: inherit;
@@ -647,5 +682,167 @@
                 color: #FF9F00;
             }
         }
+    }
+    .faqs-button-w {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    &__button {
+        display: inline-block;
+        max-width: 147px;
+        width: 100%;
+        height: 48px;
+        border: 1px solid #09B3B0;
+        border-radius: 5px;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        color: #09B3B0;
+        text-decoration: none;
+        padding: 15px 23px;
+        &:hover {
+            background-color: #FF9F00;
+        }
+    }
+}
+
+.footer-w {
+    width: 100%;
+}
+
+.footer {
+    width: inherit;
+    min-height: 288px;
+    background-color: #09B3B0;
+    padding: 50px 0px 52px;
+    &__body {
+        max-width: 1187px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        @include mq(xl) {
+            padding: 0 15px;
+            flex-direction: column;
+            align-items: center;
+        }
+        @include mq(md) {
+            align-items: flex-start;
+        }
+    }
+    &__columnleft {
+        max-width: 440px;
+        width: 100%;
+        @include mq(xl) {
+            margin-left: 100px;
+        }
+        @include mq(md) {
+            margin-left: 0px;
+        }
+    }
+    .logo-footer {
+        display: flex;
+        justify-content: space-between;
+        max-width: 275px;
+        width: 100%;
+        text-decoration: none;
+        &__items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__title {
+            font-family: 'Aleo';
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 26px;
+            color: #FFFFFF;
+        }
+        &__link {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 24px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+    &__copyright {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 13px;
+        color: #FFFFFF;
+        margin-top: 8px;
+    }
+    .footer-columnleft-bottomitems {
+        margin-top: 52px;
+    }
+    &-nav {
+        &__list {
+            display: flex;
+            list-style: none;
+        }
+        &__item {
+            display: block;
+            position: relative;
+            &:not(:first-child) {
+                margin-left: 26.5px;
+            }
+            &:first-child::after {
+                content: '';
+                position: absolute;
+                height: 14.24px;
+                width: 1px;
+                background: rgba(230, 230, 230, 0.3);
+                right: -11.8px;
+                top: 5px;
+            }
+        }
+        &__link {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+    &__columnright {
+        max-width: 339px;
+        width: 100%;
+        @include mq(xl) {
+            margin-top: 20px;
+        }
+    }
+    &__social {
+        max-width: 232px;
+        width: 100%;
+    }
+    &__socialtitle {
+        font-family: 'Aleo';
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+    &__socialnetwork {
+        width: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__paragraf {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin-top: 32px;
     }
 }

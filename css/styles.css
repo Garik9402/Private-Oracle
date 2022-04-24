@@ -61,6 +61,7 @@
     position: relative;
     background-color: #FDE5E6;
     padding: 0px 15px;
+    z-index: 10;
   }
 }
 
@@ -68,11 +69,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 50;
 }
 
 .header-w .header .header-top__logoburger .header__logo {
   max-width: 354px;
   width: 100%;
+  position: relative;
+  z-index: 5;
 }
 
 @media only screen and (max-width: 767px) {
@@ -133,7 +137,7 @@
   }
 }
 
-.header-w .header .header-top__continerswrap {
+.header-w .header .header-top__itemswrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,29 +145,13 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .header-w .header .header-top__continerswrap {
-    display: none;
-  }
-  .header-w .header .header-top__continerswrap.active2 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    padding: 150px 15px 0px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+  .header-w .header .header-top__itemswrap {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 832px;
-    z-index: 1;
-    background-color: #FDE5E6;
-    margin: 0px;
+    height: 100%;
+    z-index: 0;
   }
 }
 
@@ -1071,6 +1059,9 @@
 @media only screen and (max-width: 575px) {
   .footer__columnleft {
     margin-left: 0px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -1180,6 +1171,21 @@
 .footer__social {
   max-width: 232px;
   width: 100%;
+}
+
+@media only screen and (max-width: 575px) {
+  .footer__social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .footer__socialtitle {

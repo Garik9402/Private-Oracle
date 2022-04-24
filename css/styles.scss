@@ -33,12 +33,16 @@
                 position: relative;
                 background-color: #FDE5E6;
                 padding: 0px 15px;
+                z-index: 10;
             }
             &__logoburger {
                 display: flex;
+                z-index: 50;
                 .header__logo {
                     max-width: 354px;
                     width: 100%;
+                    position: relative;
+                    z-index: 5;
                 }
                 @include mq(lg) {
                     width: 100%;
@@ -88,25 +92,17 @@
                     }
                 }
             }
-            &__continerswrap {
+            &__itemswrap {
                 display: flex;
                 margin-top: 16px;
                 @include mq(lg) {
-                    display: none;
-                    &.active2 {
-                        position: absolute;
-                        top: 0px;
-                        left: 0px;
-                        padding: 150px 15px 0px;
-                        display: flex;
-                        flex-direction: column-reverse;
-                        justify-content: start;
-                        width: 100%;
-                        min-height: 832px;
-                        z-index: 1;
-                        background-color: #FDE5E6;
-                        margin: 0px;
-                    }
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    &.active2 {}
                 }
             }
             &__main {
@@ -741,6 +737,7 @@
         }
         @include mq(md) {
             margin-left: 0px;
+            align-items: flex-start;
         }
     }
     .logo-footer {
@@ -823,6 +820,11 @@
     &__social {
         max-width: 232px;
         width: 100%;
+        @include mq(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
     &__socialtitle {
         font-family: 'Aleo';

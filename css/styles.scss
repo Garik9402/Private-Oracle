@@ -1,6 +1,229 @@
 @import 'reset.scss';
 @import 'fonts.scss';
 @import 'mixin.scss';
+.m-main {
+    position: fixed;
+    max-width: 1506px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include mq(lg) {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    &__header {
+        display: none;
+        position: fixed;
+        max-width: inherit;
+        width: 100%;
+        min-height: 112px;
+        left: 0;
+        top: 0;
+        @include mq(lg) {
+            display: flex;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #FF9F00;
+        }
+    }
+    &__logoburger {
+        display: flex;
+        justify-content: space-between;
+        z-index: 4;
+        @include mq(lg) {
+            padding: 0 15px;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @include mq(lg) {
+            width: 1506px;
+            width: 100%;
+        }
+    }
+    .logo {
+        max-width: 354px;
+        width: 100%;
+        position: relative;
+    }
+    .burger {
+        display: block;
+        position: relative;
+        max-width: 40px;
+        width: 100%;
+        height: 40px;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #09B3B0;
+        }
+        &::before {
+            top: 1px;
+        }
+        &::after {
+            bottom: 0;
+        }
+        & span {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #09B3B0;
+            top: 19px;
+        }
+        &--active::before {
+            transform: rotate(-45deg);
+            top: 20px;
+            transition: all 0.2s ease;
+        }
+        &--active::after {
+            transform: rotate(45deg);
+            bottom: 17px;
+            transition: all 0.2s ease;
+        }
+        &--active span {
+            transform: scale(0);
+        }
+    }
+    &__container {
+        display: none;
+        &--open {
+            @include mq(lg) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 768px;
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                padding-top: 130px;
+                background-color: #3C3935;
+            }
+        }
+    }
+    &_nav {}
+    &__nav-list {
+        padding: 0 15px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__nav-item {
+        list-style: none;
+        &:not(:first-child) {
+            margin-top: 50px;
+        }
+    }
+    &__nav-link {
+        text-decoration: none;
+        font-size: 50px;
+        color: #FF9F00;
+    }
+    &__searchlogin {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+    .searchlogin {
+        display: flex;
+        @include mq(lg) {
+            padding: 0 15px;
+        }
+        &__icon {
+            display: block;
+            width: 49px;
+            height: 49px;
+            background: url(../images/search__icon.png) 55% no-repeat, #09B3B0 url(../images/icon__element.png) 48% 35% no-repeat;
+            border-radius: 50%;
+            cursor: pointer;
+            &:hover {
+                background-color: #FF9F00;
+            }
+        }
+        &__search {
+            position: relative;
+            .inputtext {
+                position: absolute;
+                height: 0;
+                min-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                right: 15px;
+                top: 52px;
+                outline: none;
+                border: 1px solid #FF9F00;
+                color: #09B3B0;
+                font-size: 20px;
+                &--inputactive {
+                    position: absolute;
+                    width: 380px;
+                    height: 30px;
+                    min-height: 5px;
+                    overflow: visible;
+                    opacity: 1;
+                    padding-left: 10px;
+                    transition: all 0.3s ease;
+                    @include mq(md) {
+                        position: absolute;
+                        width: 215px;
+                        height: 30px;
+                        min-height: 5px;
+                        overflow: visible;
+                        opacity: 1;
+                        padding-left: 10px;
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+        }
+        &__login {
+            width: 99px;
+            height: 40px;
+            margin-left: 53px;
+            padding: 8px 24px;
+            display: inline-block;
+            background-color: #09B3B0;
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 23px;
+            color: #FFFFFF;
+            text-decoration: none;
+            &:hover {
+                background-color: #FF9F00;
+            }
+        }
+    }
+    &__footer {
+        width: 100%;
+        background-color: bisque;
+        height: 80px;
+        margin-top: 166px;
+    }
+    &__footer-copyright {}
+    .footer__social {}
+}
+
+.wrapper-content {
+    width: 100%;
+    height: 100%;
+    @include mq(lg) {
+        display: block;
+    }
+}
+
+.wrapper-content--close {
+    display: none;
+}
+
 .header-w {
     position: relativ;
     background: url(../images/header__bacground.png) 50% no-repeat;
@@ -16,120 +239,69 @@
     @include mq(md) {}
     @include mq(sm) {}
     .header {
-        max-width: 1516px;
         width: 100%;
-        margin: 0 auto;
-        @include mq(lg) {
-            position: relative;
-        }
+        @include mq(lg) {}
         .header-top {
-            display: flex;
-            justify-content: space-between;
-            @include mq(xxl) {
-                flex-direction: column;
-                align-items: center;
+            width: 100%;
+            @include mq(lg) {
+                display: none;
+                background-color: #EDF8F9;
+            }
+            &__container {
+                max-width: 1506px;
+                width: 100%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                @include mq(xxl) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                @include mq(lg) {}
             }
             @include mq(lg) {
                 position: relative;
-                background-color: #FDE5E6;
                 padding: 0px 15px;
-                z-index: 10;
             }
             &__logoburger {
                 display: flex;
-                z-index: 50;
+                justify-content: space-between;
+                z-index: 4;
+                @include mq(lg) {
+                    width: 1506px;
+                    width: 100%;
+                }
                 .header__logo {
                     max-width: 354px;
                     width: 100%;
                     position: relative;
-                    z-index: 5;
                 }
                 @include mq(lg) {
                     width: 100%;
                     align-items: center;
                     justify-content: space-between;
-                    z-index: 2;
-                    .burger {
-                        display: block;
-                        position: relative;
-                        max-width: 40px;
-                        width: 100%;
-                        height: 40px;
-                        &::before,
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            width: 100%;
-                            height: 3px;
-                            background-color: #09B3B0;
-                        }
-                        &::before {
-                            top: 1px;
-                        }
-                        &::after {
-                            bottom: 0;
-                        }
-                        & span {
-                            position: absolute;
-                            width: 100%;
-                            height: 3px;
-                            background-color: #09B3B0;
-                            top: 19px;
-                        }
-                        &.active::before {
-                            transform: rotate(-45deg);
-                            top: 20px;
-                            transition: all 0.2s ease;
-                        }
-                        &.active::after {
-                            transform: rotate(45deg);
-                            bottom: 17px;
-                            transition: all 0.2s ease;
-                        }
-                        &.active span {
-                            transform: scale(0);
-                        }
-                    }
                 }
             }
             &__itemswrap {
                 display: flex;
                 margin-top: 16px;
                 @include mq(lg) {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 0;
-                    &.active2 {}
+                    display: none;
                 }
             }
             &__main {
                 display: flex;
-                @include mq(lg) {
-                    justify-content: center;
-                }
+                @include mq(lg) {}
                 .nav {
                     margin-top: 9px;
                     &__list {
                         display: flex;
                         list-style: none;
-                        @include mq(lg) {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            margin-top: 60px;
-                        }
                     }
                     &__items:not(:first-child) {
                         margin-left: 50px;
                         @include mq(xl) {
                             margin-left: 25px;
-                        }
-                        @include mq(lg) {
-                            margin-left: 0px;
-                            margin-top: 100px;
                         }
                     }
                     .main__link {
@@ -141,12 +313,6 @@
                         line-height: 23px;
                         color: #09B3B0;
                         text-decoration: none;
-                        @include mq(lg) {
-                            font-size: 50px;
-                        }
-                        @include mq(md) {
-                            font-size: 28px;
-                        }
                         &:hover {
                             color: #FF9F00;
                         }
@@ -162,18 +328,11 @@
                     }
                 }
             }
-            .header-searchlogin {
-                display: flex;
+            .header__searchlogin {
                 margin-left: 42px;
-                @include mq(lg) {
-                    display: flex;
-                    justify-content: end;
-                    margin-left: 0px;
-                }
-                @include mq(md) {
-                    flex-direction: column-reverse;
-                    align-items: flex-end;
-                }
+            }
+            .searchlogin {
+                display: flex;
                 &__icon {
                     display: block;
                     width: 49px;
@@ -187,9 +346,6 @@
                 }
                 &__search {
                     position: relative;
-                    @include mq(md) {
-                        margin-top: 10px;
-                    }
                     .inputtext {
                         position: absolute;
                         height: 0;
@@ -202,7 +358,7 @@
                         border: 1px solid #FF9F00;
                         color: #09B3B0;
                         font-size: 20px;
-                        &.inputactive {
+                        &--active {
                             position: absolute;
                             width: 380px;
                             height: 30px;
@@ -211,16 +367,6 @@
                             opacity: 1;
                             padding-left: 10px;
                             transition: all 0.3s ease;
-                            @include mq(md) {
-                                position: absolute;
-                                width: 215px;
-                                height: 30px;
-                                min-height: 5px;
-                                overflow: visible;
-                                opacity: 1;
-                                padding-left: 10px;
-                                transition: all 0.3s ease;
-                            }
                         }
                     }
                 }
@@ -245,13 +391,19 @@
         }
     }
     .header-titles {
-        margin-top: 112px;
-        padding: 0 15px;
+        margin-top: 108px;
+        @include mq(lg) {
+            padding-top: 100px;
+        }
         @include mq(md) {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 112px;
+        }
+        &__container {
+            max-width: 1506px;
+            width: 100%;
+            margin: 0 auto;
         }
         &__top {
             font-family: 'Winter Insight';
@@ -506,6 +658,9 @@
                         height: 46px;
                         right: -130px;
                         bottom: 18px;
+                        @include mq(lg) {
+                            display: none;
+                        }
                     }
                 }
             }

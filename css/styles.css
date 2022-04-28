@@ -151,6 +151,7 @@
     min-height: 30px;
     overflow: visible;
     opacity: 1;
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

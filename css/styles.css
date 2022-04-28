@@ -9,7 +9,7 @@
 }
 
 .m-main {
-  position: fixed;
+  position: relative;
   max-width: 1506px;
   width: 100%;
   height: 100%;
@@ -118,19 +118,19 @@
 }
 
 .m-main .burger--active::before {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -webkit-transform: rotate(-316deg);
+          transform: rotate(-316deg);
   top: 20px;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
 }
 
 .m-main .burger--active::after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -webkit-transform: rotate(316deg);
+          transform: rotate(316deg);
   bottom: 17px;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
 }
 
 .m-main .burger--active span {
@@ -342,7 +342,7 @@
   height: 100%;
 }
 
-.wrapper-content--close {
+.wrapper-content--toggle {
   display: none;
 }
 
@@ -493,11 +493,11 @@
   text-decoration: none;
 }
 
-.wrapper-content .header-w .header .header-top__main .nav .main__link:hover {
+.wrapper-content .header-w .header .header-top__main .nav .main__link--underline-active {
   color: #FF9F00;
 }
 
-.wrapper-content .header-w .header .header-top__main .nav .main__link:hover::before {
+.wrapper-content .header-w .header .header-top__main .nav .main__link--underline-active::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -608,6 +608,7 @@
   max-width: 1506px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .wrapper-content .header-w .header-titles__top {
@@ -715,6 +716,7 @@
 }
 
 .wrapper-content .psychicadvisor-w {
+  position: relative;
   width: 100%;
   min-height: 764px;
   background: url(../images/psychicadvisor-img.png) no-repeat;
@@ -968,6 +970,7 @@
 }
 
 .wrapper-content .psychicadvisor-w .psychicadvisor__button-w .buttonlong:last-child {
+  position: relative;
   margin-left: 20px;
 }
 
@@ -1113,6 +1116,7 @@
 }
 
 .wrapper-content .faqs-w {
+  position: relative;
   width: 100%;
 }
 
@@ -1313,6 +1317,7 @@
 }
 
 .footer .logo-footer {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1416,6 +1421,7 @@
 }
 
 .footer__social {
+  position: relative;
   max-width: 232px;
   width: 100%;
 }

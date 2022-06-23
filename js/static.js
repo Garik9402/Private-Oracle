@@ -39,9 +39,7 @@ window.addEventListener('click', function(e) {
 //burger
 let burgerNode = document.querySelector('.burger')
 let mainNode = document.querySelector('.m-main__container')
-let contentNode = document.querySelector('.wrapper-content')
 burgerNode.addEventListener('click', function() {
     burgerNode.classList.toggle('burger--active')
     mainNode.classList.toggle("m-main__container--open")
-    contentNode.classList.toggle('wrapper-content--toggle')
 })

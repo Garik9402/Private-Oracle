@@ -1,4 +1,4 @@
-// undrline link
+//undrline link
 let mainlinkNode = document.querySelectorAll('.main__link')
 for (i = 0; i < mainlinkNode.length; i++) {
     mainlinkNode[i].addEventListener('mouseover', function() {
@@ -40,6 +40,10 @@ window.addEventListener('click', function(e) {
 let burgerNode = document.querySelector('.burger')
 let mainNode = document.querySelector('.m-main__container')
 burgerNode.addEventListener('click', function() {
-    burgerNode.classList.toggle('burger--active')
-    mainNode.classList.toggle("m-main__container--open")
-})
+        burgerNode.classList.toggle('burger--active')
+        mainNode.classList.toggle("m-main__container--open") <<
+            << << < HEAD
+    }) ===
+    === =
+}) >>>
+>>> > e853b8f2c8e630a63135b370421e50f99c0d8d97

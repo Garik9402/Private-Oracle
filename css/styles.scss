@@ -1,1031 +1,1030 @@
-                @import 'reset.scss';
-                @import 'fonts.scss';
-                @import 'mixin.scss';
-                .m-main {
-                    position: relative;
-                    max-width: 1506px;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    @include mq(lg) {
-                        flex-direction: row;
-                        align-items: flex-start;
-                    }
-                    &__header {
-                        display: none;
-                        @include mq(lg) {
-                            display: flex;
-                            position: fixed;
-                            max-width: inherit;
-                            width: inherit;
-                            min-height: 112px;
-                            left: 0;
-                            top: 0;
-                            z-index: 20;
-                            background-color: #FF9F00;
-                            z-index: 45;
-                        }
-                    }
-                    &__logoburger {
-                        display: flex;
-                        justify-content: space-between;
-                        z-index: 4;
-                        @include mq(lg) {
-                            padding: 0 15px;
-                            width: 100%;
-                            align-items: center;
-                            justify-content: space-between;
-                        }
-                        @include mq(lg) {
-                            width: 1506px;
-                            width: 100%;
-                        }
-                    }
-                    .logo {
-                        max-width: 354px;
-                        width: 100%;
-                    }
-                    .burger {
-                        display: block;
-                        position: relative;
-                        max-width: 40px;
-                        width: 100%;
-                        height: 40px;
-                        &::before,
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            width: 100%;
-                            height: 3px;
-                            background-color: #09B3B0;
-                        }
-                        &::before {
-                            top: 1px;
-                        }
-                        &::after {
-                            bottom: 0;
-                        }
-                        & span {
-                            position: absolute;
-                            width: 100%;
-                            height: 3px;
-                            background-color: #09B3B0;
-                            top: 19px;
-                        }
-                        &--active::before {
-                            transform: rotate(-316deg);
-                            top: 20px;
-                            transition: all 0.45s ease;
-                        }
-                        &--active::after {
-                            transform: rotate(316deg);
-                            bottom: 17px;
-                            transition: all 0.45s ease;
-                        }
-                        &--active span {
-                            transform: scale(0);
-                        }
-                    }
-                    &__container {
-                        position: relative;
-                        height: 0;
-                        min-height: 0;
-                        overflow: hidden;
-                        opacity: 0;
-                        &--open {
-                            @include mq(lg) {
-                                min-height: 30px;
-                                overflow: visible;
-                                opacity: 1;
-                                position: fixed;
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                max-width: 768px;
-                                width: 100%;
-                                height: 100%;
-                                margin: 0 auto;
-                                padding-top: 160px;
-                                background-color: #3C3935;
-                                transition: all 0.3s ease;
-                                z-index: 1;
-                            }
-                        }
-                    }
-                    &_nav {}
-                    &__nav-list {
-                        padding: 0 15px;
-                        margin-top: 50px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                    }
-                    &__nav-item {
-                        list-style: none;
-                        &:not(:first-child) {
-                            margin-top: 70px;
-                        }
-                    }
-                    &__nav-link {
-                        text-decoration: none;
-                        font-size: 50px;
-                        color: #FF9F00;
-                        @include mq(md) {
-                            font-size: 37px;
-                        }
-                        @include mq(sm) {
-                            font-size: 25px;
-                        }
-                    }
-                    &__searchlogin {
-                        width: 100%;
-                        display: flex;
-                        justify-content: end;
-                    }
-                    .searchlogin {
-                        display: flex;
-                        @include mq(lg) {
-                            padding: 0 15px;
-                        }
-                        @include mq(md) {
-                            flex-direction: column-reverse;
-                            align-items: flex-end;
-                        }
-                        &__icon {
-                            display: block;
-                            width: 49px;
-                            height: 49px;
-                            background: url(../images/search__icon.png) 55% no-repeat, #09B3B0 url(../images/icon__element.png) 48% 35% no-repeat;
-                            border-radius: 50%;
-                            cursor: pointer;
-                            &:hover {
-                                background-color: #FF9F00;
-                            }
-                        }
-                        &__search {
-                            position: relative;
-                            @include mq(md) {
-                                margin-top: 10px;
-                            }
-                            .inputtext {
-                                position: absolute;
-                                height: 0;
-                                min-height: 0;
-                                overflow: hidden;
-                                opacity: 0;
-                                right: 15px;
-                                top: 52px;
-                                outline: none;
-                                border: 1px solid #FF9F00;
-                                color: #09B3B0;
-                                font-size: 20px;
-                                &--inputactive {
-                                    position: absolute;
-                                    width: 380px;
-                                    height: 30px;
-                                    min-height: 5px;
-                                    overflow: visible;
-                                    opacity: 1;
-                                    padding-left: 10px;
-                                    transition: all 0.3s ease;
-                                    @include mq(md) {
-                                        position: absolute;
-                                        width: 215px;
-                                        height: 30px;
-                                        min-height: 5px;
-                                        overflow: visible;
-                                        opacity: 1;
-                                        padding-left: 10px;
-                                        transition: all 0.3s ease;
-                                    }
-                                }
-                            }
-                        }
-                        &__login {
-                            width: 99px;
-                            height: 40px;
-                            margin-left: 53px;
-                            padding: 8px 24px;
-                            display: inline-block;
-                            background-color: #09B3B0;
-                            font-family: 'Roboto';
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 23px;
-                            color: #FFFFFF;
-                            text-decoration: none;
-                            &:hover {
-                                background-color: #FF9F00;
-                            }
-                        }
-                    }
-                    &__footer {
-                        width: 100%;
-                        background-color: bisque;
-                        height: 628px;
-                        margin-top: 166px;
-                    }
-                }
-                
-                .wrapper-content {
-                    position: 33;
-                    width: 100%;
-                    height: 100%;
-                    @include mq(lg) {}
-                    &--toggle {
-                        display: none;
-                    }
-                    .header-w {
-                        position: relativ;
-                        background: url(../images/header__bacground.png) 50% no-repeat;
-                        background-size: cover;
-                        width: 100%;
-                        min-height: 833px;
-                        padding-top: 24px;
-                        @include mq(xxl) {}
-                        @include mq(xl) {}
-                        @include mq(lg) {
-                            padding-top: 0px;
-                        }
-                        @include mq(md) {}
-                        @include mq(sm) {}
-                        .header {
-                            width: 100%;
-                            @include mq(lg) {}
-                            .header-top {
-                                width: 100%;
-                                @include mq(lg) {
-                                    display: none;
-                                    background-color: #EDF8F9;
-                                }
-                                &__container {
-                                    max-width: 1506px;
-                                    width: 100%;
-                                    margin: 0 auto;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    @include mq(xxl) {
-                                        flex-direction: column;
-                                        align-items: center;
-                                    }
-                                    @include mq(lg) {}
-                                }
-                                @include mq(lg) {
-                                    position: relative;
-                                    padding: 0px 15px;
-                                }
-                                &__logoburger {
-                                    display: flex;
-                                    justify-content: space-between;
-                                    z-index: 4;
-                                    @include mq(lg) {
-                                        width: 1506px;
-                                        width: 100%;
-                                    }
-                                    .header__logo {
-                                        max-width: 354px;
-                                        width: 100%;
-                                        position: relative;
-                                    }
-                                    @include mq(lg) {
-                                        width: 100%;
-                                        align-items: center;
-                                        justify-content: space-between;
-                                    }
-                                }
-                                &__itemswrap {
-                                    display: flex;
-                                    margin-top: 16px;
-                                    @include mq(lg) {
-                                        display: none;
-                                    }
-                                }
-                                &__main {
-                                    display: flex;
-                                    @include mq(lg) {}
-                                    .nav {
-                                        margin-top: 9px;
-                                        &__list {
-                                            display: flex;
-                                            list-style: none;
-                                        }
-                                        &__items:not(:first-child) {
-                                            margin-left: 50px;
-                                            @include mq(xl) {
-                                                margin-left: 25px;
-                                            }
-                                        }
-                                        .main__link {
-                                            position: relative;
-                                            display: block;
-                                            font-family: 'Roboto';
-                                            font-weight: 400;
-                                            font-size: 18px;
-                                            line-height: 23px;
-                                            color: #09B3B0;
-                                            text-decoration: none;
-                                            &--underline-active {
-                                                color: #FF9F00;
-                                                &::before {
-                                                    content: '';
-                                                    position: absolute;
-                                                    width: 100%;
-                                                    height: 2px;
-                                                    background-color: #FF9F00;
-                                                    bottom: 0;
-                                                    left: 0;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                                .header__searchlogin {
-                                    margin-left: 42px;
-                                }
-                                .searchlogin {
-                                    display: flex;
-                                    &__icon {
-                                        display: block;
-                                        width: 49px;
-                                        height: 49px;
-                                        background: url(../images/search__icon.png) 55% no-repeat, #09B3B0 url(../images/icon__element.png) 48% 35% no-repeat;
-                                        border-radius: 50%;
-                                        cursor: pointer;
-                                        &:hover {
-                                            background-color: #FF9F00;
-                                        }
-                                    }
-                                    &__search {
-                                        position: relative;
-                                        .inputtext {
-                                            position: absolute;
-                                            height: 0;
-                                            min-height: 0;
-                                            overflow: hidden;
-                                            opacity: 0;
-                                            right: 15px;
-                                            top: 52px;
-                                            outline: none;
-                                            border: 1px solid #FF9F00;
-                                            color: #09B3B0;
-                                            font-size: 20px;
-                                            &--inputactive {
-                                                position: absolute;
-                                                width: 380px;
-                                                height: 30px;
-                                                min-height: 5px;
-                                                overflow: visible;
-                                                opacity: 1;
-                                                padding-left: 10px;
-                                                transition: all 0.3s ease;
-                                            }
-                                        }
-                                    }
-                                    &__login {
-                                        width: 99px;
-                                        height: 40px;
-                                        margin-left: 53px;
-                                        padding: 8px 24px;
-                                        display: inline-block;
-                                        background-color: #09B3B0;
-                                        font-family: 'Roboto';
-                                        font-weight: 500;
-                                        font-size: 18px;
-                                        line-height: 23px;
-                                        color: #FFFFFF;
-                                        text-decoration: none;
-                                        &:hover {
-                                            background-color: #FF9F00;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .header-titles {
-                            margin-top: 108px;
-                            @include mq(lg) {
-                                padding-top: 100px;
-                            }
-                            @include mq(md) {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                            }
-                            &__container {
-                                max-width: 1506px;
-                                width: 100%;
-                                margin: 0 auto;
-                                padding: 0 15px;
-                            }
-                            &__top {
-                                font-family: 'Winter Insight';
-                                font-weight: 400;
-                                font-size: 135px;
-                                line-height: 96.32%;
-                                color: #FF9F00;
-                                margin-bottom: 67px;
-                                @include mq(md) {
-                                    font-family: 'Winter Insight';
-                                    font-weight: 400;
-                                    font-size: 90px;
-                                    line-height: 96.32%;
-                                    color: #FF9F00;
-                                    margin-bottom: 67px;
-                                    text-align: center;
-                                }
-                            }
-                            &__middle {
-                                font-family: 'Winter Insight';
-                                font-weight: 400;
-                                font-size: 30px;
-                                line-height: 38px;
-                                letter-spacing: 0.1em;
-                                text-transform: uppercase;
-                                color: #000000;
-                                margin-bottom: 22px;
-                                @include mq(md) {
-                                    text-align: center;
-                                }
-                            }
-                            &__bottom {
-                                font-family: 'Yrsa';
-                                font-weight: 400;
-                                font-size: 64px;
-                                line-height: 38px;
-                                letter-spacing: 0.1em;
-                                color: #FF9F00;
-                                @include mq(md) {
-                                    text-align: center;
-                                }
-                            }
-                        }
-                    }
-                    .psychicadvisor-title-wrap {
-                        width: 100%;
-                        .psychicadvisor__title {
-                            width: 100%;
-                            height: 150px;
-                            background: #09B3B0;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            font-family: 'Yrsa';
-                            font-weight: 400;
-                            font-size: 72px;
-                            line-height: 40px;
-                            color: #FFFFFF;
-                            @include mq(xl) {
-                                font-size: 60px;
-                            }
-                            @include mq(lg) {
-                                height: 100px;
-                                font-size: 45px;
-                            }
-                            @include mq(md) {
-                                height: 80px;
-                                font-size: 30px;
-                            }
-                            @include mq(sm) {
-                                height: 60px;
-                                font-size: 25px;
-                            }
-                        }
-                    }
-                    .psychicadvisor-w {
-                        position: relative;
-                        width: 100%;
-                        min-height: 764px;
-                        background: url(../images/psychicadvisor-img.png) no-repeat;
-                        background-size: cover;
-                        .psychicadvisor {
-                            max-width: 1080.5px;
-                            width: 100%;
-                            margin: 58px auto 0px;
-                            &__description {
-                                width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                &:not(:first-child) {
-                                    margin-top: 58px;
-                                }
-                                @include mq(xl) {
-                                    flex-direction: column;
-                                    align-items: center;
-                                }
-                            }
-                            &__descriptioncontent {
-                                max-width: 666px;
-                                width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                @include mq(lg) {
-                                    flex-direction: column;
-                                    align-items: center;
-                                    padding: 0 15px;
-                                }
-                            }
-                            &__img {
-                                max-width: 150px;
-                                width: 100%;
-                            }
-                            &__contenttitle {
-                                max-width: 458px;
-                                width: 100%;
-                            }
-                            &__subtitle {
-                                font-family: 'Roboto';
-                                font-weight: 400;
-                                font-size: 23px;
-                                line-height: 24px;
-                                color: #008080;
-                                @include mq(lg) {
-                                    text-align: center;
-                                    margin-top: 10px;
-                                }
-                            }
-                            .psychicadvisor__status {
-                                font-family: 'Roboto';
-                                font-weight: 400;
-                                font-size: 16px;
-                                line-height: 16px;
-                                color: #09292F;
-                                margin-top: 16px;
-                            }
-                            &__paragraph {
-                                font-family: 'Roboto';
-                                font-weight: 400;
-                                font-size: 16px;
-                                line-height: 24px;
-                                color: #09292F;
-                                margin-top: 13px;
-                                &:not(:first-child) {
-                                    margin-top: 19px;
-                                }
-                            }
-                            &__services {
-                                max-width: 163px;
-                                width: 100%;
-                                @include mq(xl) {
-                                    margin-top: 20px;
-                                }
-                            }
-                            &__free {
-                                width: 100%;
-                                background: #09B3B0;
-                                border-radius: 3px 0px 0px 3px;
-                                padding: 5px 49px 5px 8px;
-                                font-family: 'Roboto';
-                                font-weight: 400;
-                                font-size: 12px;
-                                line-height: 12px;
-                                color: #FFFFFF;
-                            }
-                            .psychicadvisor__summ {
-                                font-family: 'Roboto';
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 22px;
-                                line-height: 22px;
-                                color: #09292F;
-                                margin-top: 6px;
-                            }
-                            &__button {
-                                margin-top: 18px;
-                                &:last-child {
-                                    margin-top: 8px;
-                                }
-                            }
-                            .button {
-                                position: relative;
-                                max-width: 163px;
-                                width: 100%;
-                                display: inline-block;
-                                padding: 9px 30px 13px 62px;
-                                border-radius: 5px;
-                                font-family: 'Roboto';
-                                font-weight: 400;
-                                font-size: 17px;
-                                line-height: 18px;
-                                color: #FFFFFF;
-                                text-decoration: none;
-                                &--icon-phone {
-                                    background: url(../images/img-phone.png) 25px 9px no-repeat;
-                                }
-                                &--color-orange {
-                                    background-color: orange;
-                                    border: 1px solid #FF9F00;
-                                }
-                                &:last-child {
-                                    padding: 9px 24px 13px 56px;
-                                }
-                                &--color-white {
-                                    background: #FFFFFF;
-                                    border: 1px solid #09B3B0;
-                                    color: #09B3B0;
-                                }
-                                &--icon-letter {
-                                    background: url(../images/img-sms.png) 24px 10px no-repeat;
-                                }
-                                &:nth-child(3) {
-                                    padding: 9px 26px 13px 58px;
-                                }
-                                &--icon-chat {
-                                    position: relative;
-                                    display: block;
-                                    &::before {
-                                        content: '';
-                                        position: absolute;
-                                        background: url(../images/img-private.png) no-repeat;
-                                        left: 24.5px;
-                                        top: 10px;
-                                        width: 20px;
-                                        height: 20px;
-                                    }
-                                }
-                                &--color-green {
-                                    background: #09B3B0;
-                                    border: 1px solid #09B3B0;
-                                }
-                            }
-                            &__button-w {
-                                width: 100%;
-                                margin-top: 52px;
-                                display: flex;
-                                justify-content: center;
-                                @include mq(lg) {
-                                    padding: 0px 15px
-                                }
-                                .buttonlong {
-                                    display: inline-block;
-                                    max-width: 255px;
-                                    width: 100%;
-                                    height: 48px;
-                                    font-family: 'Roboto';
-                                    font-weight: 400;
-                                    font-size: 15px;
-                                    line-height: 16px;
-                                    color: #FFFFFF;
-                                    border-radius: 5px;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    text-decoration: none;
-                                    &:last-child {
-                                        position: relative;
-                                        margin-left: 20px;
-                                        @include mq(lg) {}
-                                        &::after {
-                                            content: '';
-                                            position: absolute;
-                                            background: url(../images/icon-bestmatc.png) no-repeat;
-                                            max-width: 118px;
-                                            width: 100%;
-                                            height: 46px;
-                                            right: -130px;
-                                            bottom: 18px;
-                                            @include mq(lg) {
-                                                display: none;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .contents-wrapper {
-                        width: 100%;
-                        min-height: 1748px;
-                        background: url(../images/Faq__img.png) no-repeat;
-                        background-size: cover;
-                    }
-                    .oracle-w {
-                        width: 100%;
-                        background: #EDF8F9;
-                        .oracle {
-                            max-width: 1050.5px;
-                            width: 100%;
-                            margin: 0 auto;
-                            &__title {
-                                font-family: 'Segoe UI';
-                                font-weight: 400;
-                                font-size: 46px;
-                                line-height: 144px;
-                                text-align: center;
-                                text-transform: uppercase;
-                                color: #3C3935;
-                                @include mq(md) {
-                                    font-size: 40px;
-                                    line-height: 140px;
-                                }
-                                @include mq(sm) {}
-                            }
-                            &__row {
-                                width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                @include mq(xl) {
-                                    padding: 0 15px;
-                                    justify-content: space-around;
-                                }
-                                @include mq(lg) {
-                                    flex-direction: column;
-                                    align-items: center;
-                                }
-                            }
-                            &__column {
-                                max-width: 290px;
-                                width: 100%;
-                                &:last-child {
-                                    @include mq(xl) {
-                                        display: none;
-                                    }
-                                }
-                                @include mq(lg) {
-                                    margin-top: 20px;
-                                }
-                            }
-                            .item-oracle {
-                                width: 100%;
-                                &__img {
-                                    margin-left: 80px;
-                                }
-                                &__title {
-                                    font-family: 'Segoe UI';
-                                    font-weight: 400;
-                                    font-size: 24px;
-                                    line-height: 29px;
-                                    color: #0099A8;
-                                    margin-top: 8px;
-                                }
-                                &__text {
-                                    font-family: 'Segoe UI';
-                                    font-size: 14px;
-                                    line-height: 20px;
-                                    letter-spacing: 0.42px;
-                                    color: #3C3935;
-                                    margin-top: 6px;
-                                }
-                                &__link {
-                                    font-family: 'Segoe UI';
-                                    font-weight: 400;
-                                    font-size: 14px;
-                                    line-height: 20px;
-                                    text-align: center;
-                                    letter-spacing: 0.42px;
-                                    color: #0099A8;
-                                    text-decoration: none;
-                                    margin-left: 80px;
-                                    &:hover {
-                                        color: #FF9F00;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .faqs-w {
-                        position: relative;
-                        width: 100%;
-                    }
-                    .faqs {
-                        max-width: 1064px;
-                        width: 100%;
-                        margin: 39px auto 0px;
-                        @include mq(xl) {
-                            padding: 0 15px;
-                        }
-                        &__title {
-                            text-align: center;
-                            &:not(:first-child) {
-                                margin-top: 100px;
-                            }
-                        }
-                        .title {
-                            font-family: 'Yrsa';
-                            font-weight: 400;
-                            font-size: 43px;
-                            line-height: 48px;
-                            letter-spacing: 1px;
-                            color: #09292F;
-                        }
-                        &__text {
-                            font-family: 'Roboto';
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 23px;
-                            color: #09292F;
-                            margin-top: 31px;
-                        }
-                        &__row {
-                            max-width: 896px;
-                            width: 100%;
-                            display: flex;
-                            justify-content: space-between;
-                            margin-top: 15px;
-                            @include mq(lg) {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                            }
-                        }
-                        &__column {
-                            max-width: 331px;
-                            width: 100%;
-                            @include mq(lg) {
-                                margin-top: 9px;
-                            }
-                        }
-                        .items__faqs {
-                            width: inherit;
-                        }
-                        .nav {
-                            &__list {
-                                list-style: none;
-                            }
-                            &__items:not(:first-child) {
-                                margin-top: 9px;
-                            }
-                            .main__link {
-                                font-family: 'Roboto';
-                                font-weight: 400;
-                                font-size: 15px;
-                                line-height: 23px;
-                                color: #008080;
-                                text-decoration: none;
-                                &:hover {
-                                    color: #FF9F00;
-                                }
-                            }
-                        }
-                        .faqs-button-w {
-                            width: 100%;
-                            display: flex;
-                            justify-content: center;
-                            margin-top: 40px;
-                        }
-                        &__button {
-                            display: inline-block;
-                            max-width: 147px;
-                            width: 100%;
-                            height: 48px;
-                            border: 1px solid #09B3B0;
-                            border-radius: 5px;
-                            font-family: 'Roboto';
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 16px;
-                            color: #09B3B0;
-                            text-decoration: none;
-                            padding: 15px 23px;
-                            &:hover {
-                                background-color: #FF9F00;
-                            }
-                        }
-                    }
-                }
-                
-                .footer-w {
-                    width: 100%;
-                }
-                
-                .footer {
-                    width: inherit;
-                    min-height: 288px;
-                    background-color: #09B3B0;
-                    padding: 50px 0px 52px;
-                    &__body {
-                        max-width: 1187px;
-                        width: 100%;
-                        margin: 0 auto;
-                        display: flex;
-                        justify-content: space-between;
-                        @include mq(xl) {
-                            padding: 0 15px;
-                            flex-direction: column;
-                            align-items: center;
-                        }
-                        @include mq(md) {
-                            align-items: flex-start;
-                        }
-                    }
-                    &__columnleft {
-                        max-width: 440px;
-                        width: 100%;
-                        @include mq(xl) {
-                            margin-left: 100px;
-                        }
-                        @include mq(md) {
-                            margin-left: 0px;
-                            align-items: flex-start;
-                        }
-                    }
-                    .logo-footer {
-                        position: relative;
-                        display: flex;
-                        justify-content: space-between;
-                        max-width: 275px;
-                        width: 100%;
-                        text-decoration: none;
-                        &__items {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                        }
-                        &__title {
-                            font-family: 'Aleo';
-                            font-weight: 400;
-                            font-size: 22px;
-                            line-height: 26px;
-                            color: #FFFFFF;
-                        }
-                        &__link {
-                            font-family: 'Montserrat';
-                            font-weight: 400;
-                            font-size: 13px;
-                            line-height: 24px;
-                            color: #FFFFFF;
-                            text-decoration: none;
-                        }
-                    }
-                    &__copyright {
-                        font-family: 'Montserrat';
-                        font-weight: 400;
-                        font-size: 13px;
-                        line-height: 13px;
-                        color: #FFFFFF;
-                        margin-top: 8px;
-                    }
-                    .footer-columnleft-bottomitems {
-                        margin-top: 52px;
-                    }
-                    &-nav {
-                        &__list {
-                            display: flex;
-                            list-style: none;
-                        }
-                        &__item {
-                            display: block;
-                            position: relative;
-                            &:not(:first-child) {
-                                margin-left: 26.5px;
-                            }
-                            &:first-child::after {
-                                content: '';
-                                position: absolute;
-                                height: 14.24px;
-                                width: 1px;
-                                background: rgba(230, 230, 230, 0.3);
-                                right: -11.8px;
-                                top: 5px;
-                            }
-                        }
-                        &__link {
-                            font-family: 'Montserrat';
-                            font-weight: 400;
-                            font-size: 12px;
-                            line-height: 12px;
-                            letter-spacing: 1px;
-                            text-transform: uppercase;
-                            color: #FFFFFF;
-                            text-decoration: none;
-                        }
-                    }
-                    &__columnright {
-                        max-width: 339px;
-                        width: 100%;
-                        @include mq(xl) {
-                            margin-top: 20px;
-                        }
-                    }
-                    &__social {
-                        position: relative;
-                        max-width: 232px;
-                        width: 100%;
-                        @include mq(md) {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                        }
-                    }
-                    &__socialtitle {
-                        font-family: 'Aleo';
-                        font-weight: 400;
-                        font-size: 17px;
-                        line-height: 22px;
-                        color: #FFFFFF;
-                    }
-                    &__socialnetwork {
-                        width: inherit;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                    }
-                    &__paragraf {
-                        font-family: 'Montserrat';
-                        font-weight: 400;
-                        font-size: 13px;
-                        line-height: 24px;
-                        color: #FFFFFF;
-                        margin-top: 32px;
-                    }
-                }
+               .m-main {
+                   position: relative;
+                   max-width: 1506px;
+                   width: 100%;
+                   height: 100%;
+                   top: 0;
+                   left: 0;
+                   @include mq(lg) {
+                       flex-direction: row;
+                       align-items: flex-start;
+                   }
+                   &__header {
+                       display: none;
+                       @include mq(lg) {
+                           display: flex;
+                           position: fixed;
+                           max-width: inherit;
+                           width: inherit;
+                           min-height: 112px;
+                           left: 0;
+                           top: 0;
+                           z-index: 20;
+                           background-color: #FF9F00;
+                           z-index: 45;
+                       }
+                   }
+                   &__logoburger {
+                       display: flex;
+                       justify-content: space-between;
+                       z-index: 4;
+                       @include mq(lg) {
+                           padding: 0 15px;
+                           width: 100%;
+                           align-items: center;
+                           justify-content: space-between;
+                       }
+                       @include mq(lg) {
+                           width: 1506px;
+                           width: 100%;
+                       }
+                   }
+                   .logo {
+                       max-width: 354px;
+                       width: 100%;
+                   }
+                   .burger {
+                       display: block;
+                       position: relative;
+                       max-width: 40px;
+                       width: 100%;
+                       height: 40px;
+                       &::before,
+                       &::after {
+                           content: '';
+                           position: absolute;
+                           width: 100%;
+                           height: 3px;
+                           background-color: #09B3B0;
+                       }
+                       &::before {
+                           top: 1px;
+                       }
+                       &::after {
+                           bottom: 0;
+                       }
+                       & span {
+                           position: absolute;
+                           width: 100%;
+                           height: 3px;
+                           background-color: #09B3B0;
+                           top: 19px;
+                       }
+                       &--active::before {
+                           transform: rotate(-316deg);
+                           top: 20px;
+                           transition: all 0.45s ease;
+                       }
+                       &--active::after {
+                           transform: rotate(316deg);
+                           bottom: 17px;
+                           transition: all 0.45s ease;
+                       }
+                       &--active span {
+                           transform: scale(0);
+                       }
+                   }
+                   &__container {
+                       position: relative;
+                       height: 0;
+                       min-height: 0;
+                       overflow: hidden;
+                       opacity: 0;
+                       &--open {
+                           @include mq(lg) {
+                               min-height: 30px;
+                               overflow: visible;
+                               opacity: 1;
+                               position: fixed;
+                               display: flex;
+                               flex-direction: column;
+                               align-items: center;
+                               max-width: 768px;
+                               width: 100%;
+                               height: 100%;
+                               margin: 0 auto;
+                               padding-top: 160px;
+                               background-color: #3C3935;
+                               transition: all 0.3s ease;
+                               <<<<<<< HEAD z-index: 1;
+                               =======z-index: 1;
+                               >>>>>>>e853b8f2c8e630a63135b370421e50f99c0d8d97
+                           }
+                       }
+                   }
+                   &_nav {}
+                   &__nav-list {
+                       padding: 0 15px;
+                       margin-top: 50px;
+                       display: flex;
+                       flex-direction: column;
+                       align-items: center;
+                   }
+                   &__nav-item {
+                       list-style: none;
+                       &:not(:first-child) {
+                           margin-top: 70px;
+                       }
+                   }
+                   &__nav-link {
+                       text-decoration: none;
+                       font-size: 50px;
+                       color: #FF9F00;
+                       @include mq(md) {
+                           font-size: 37px;
+                       }
+                       @include mq(sm) {
+                           font-size: 25px;
+                       }
+                   }
+                   &__searchlogin {
+                       width: 100%;
+                       display: flex;
+                       justify-content: end;
+                   }
+                   .searchlogin {
+                       display: flex;
+                       @include mq(lg) {
+                           padding: 0 15px;
+                       }
+                       @include mq(md) {
+                           flex-direction: column-reverse;
+                           align-items: flex-end;
+                       }
+                       &__icon {
+                           display: block;
+                           width: 49px;
+                           height: 49px;
+                           background: url(../images/search__icon.png) 55% no-repeat, #09B3B0 url(../images/icon__element.png) 48% 35% no-repeat;
+                           border-radius: 50%;
+                           cursor: pointer;
+                           &:hover {
+                               background-color: #FF9F00;
+                           }
+                       }
+                       &__search {
+                           position: relative;
+                           @include mq(md) {
+                               margin-top: 10px;
+                           }
+                           .inputtext {
+                               position: absolute;
+                               height: 0;
+                               min-height: 0;
+                               overflow: hidden;
+                               opacity: 0;
+                               right: 15px;
+                               top: 52px;
+                               outline: none;
+                               border: 1px solid #FF9F00;
+                               color: #09B3B0;
+                               font-size: 20px;
+                               &--inputactive {
+                                   position: absolute;
+                                   width: 380px;
+                                   height: 30px;
+                                   min-height: 5px;
+                                   overflow: visible;
+                                   opacity: 1;
+                                   padding-left: 10px;
+                                   transition: all 0.3s ease;
+                                   @include mq(md) {
+                                       position: absolute;
+                                       width: 215px;
+                                       height: 30px;
+                                       min-height: 5px;
+                                       overflow: visible;
+                                       opacity: 1;
+                                       padding-left: 10px;
+                                       transition: all 0.3s ease;
+                                   }
+                               }
+                           }
+                       }
+                       &__login {
+                           width: 99px;
+                           height: 40px;
+                           margin-left: 53px;
+                           padding: 8px 24px;
+                           display: inline-block;
+                           background-color: #09B3B0;
+                           font-family: 'Roboto';
+                           font-weight: 500;
+                           font-size: 18px;
+                           line-height: 23px;
+                           color: #FFFFFF;
+                           text-decoration: none;
+                           &:hover {
+                               background-color: #FF9F00;
+                           }
+                       }
+                   }
+                   &__footer {
+                       width: 100%;
+                       background-color: bisque;
+                       height: 628px;
+                       margin-top: 166px;
+                   }
+               }
+               
+               .wrapper-content {
+                   position: 33;
+                   width: 100%;
+                   height: 100%;
+                   @include mq(lg) {}
+                   &--toggle {
+                       display: none;
+                   }
+                   .header-w {
+                       position: relativ;
+                       background: url(../images/header__bacground.png) 50% no-repeat;
+                       background-size: cover;
+                       width: 100%;
+                       min-height: 833px;
+                       padding-top: 24px;
+                       @include mq(xxl) {}
+                       @include mq(xl) {}
+                       @include mq(lg) {
+                           padding-top: 0px;
+                       }
+                       @include mq(md) {}
+                       @include mq(sm) {}
+                       .header {
+                           width: 100%;
+                           @include mq(lg) {}
+                           .header-top {
+                               width: 100%;
+                               @include mq(lg) {
+                                   display: none;
+                                   background-color: #EDF8F9;
+                               }
+                               &__container {
+                                   max-width: 1506px;
+                                   width: 100%;
+                                   margin: 0 auto;
+                                   display: flex;
+                                   justify-content: space-between;
+                                   @include mq(xxl) {
+                                       flex-direction: column;
+                                       align-items: center;
+                                   }
+                                   @include mq(lg) {}
+                               }
+                               @include mq(lg) {
+                                   position: relative;
+                                   padding: 0px 15px;
+                               }
+                               &__logoburger {
+                                   display: flex;
+                                   justify-content: space-between;
+                                   z-index: 4;
+                                   @include mq(lg) {
+                                       width: 1506px;
+                                       width: 100%;
+                                   }
+                                   .header__logo {
+                                       max-width: 354px;
+                                       width: 100%;
+                                       position: relative;
+                                   }
+                                   @include mq(lg) {
+                                       width: 100%;
+                                       align-items: center;
+                                       justify-content: space-between;
+                                   }
+                               }
+                               &__itemswrap {
+                                   display: flex;
+                                   margin-top: 16px;
+                                   @include mq(lg) {
+                                       display: none;
+                                   }
+                               }
+                               &__main {
+                                   display: flex;
+                                   @include mq(lg) {}
+                                   .nav {
+                                       margin-top: 9px;
+                                       &__list {
+                                           display: flex;
+                                           list-style: none;
+                                       }
+                                       &__items:not(:first-child) {
+                                           margin-left: 50px;
+                                           @include mq(xl) {
+                                               margin-left: 25px;
+                                           }
+                                       }
+                                       .main__link {
+                                           position: relative;
+                                           display: block;
+                                           font-family: 'Roboto';
+                                           font-weight: 400;
+                                           font-size: 18px;
+                                           line-height: 23px;
+                                           color: #09B3B0;
+                                           text-decoration: none;
+                                           &--underline-active {
+                                               color: #FF9F00;
+                                               &::before {
+                                                   content: '';
+                                                   position: absolute;
+                                                   width: 100%;
+                                                   height: 2px;
+                                                   background-color: #FF9F00;
+                                                   bottom: 0;
+                                                   left: 0;
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                               .header__searchlogin {
+                                   margin-left: 42px;
+                               }
+                               .searchlogin {
+                                   display: flex;
+                                   &__icon {
+                                       display: block;
+                                       width: 49px;
+                                       height: 49px;
+                                       background: url(../images/search__icon.png) 55% no-repeat, #09B3B0 url(../images/icon__element.png) 48% 35% no-repeat;
+                                       border-radius: 50%;
+                                       cursor: pointer;
+                                       &:hover {
+                                           background-color: #FF9F00;
+                                       }
+                                   }
+                                   &__search {
+                                       position: relative;
+                                       .inputtext {
+                                           position: absolute;
+                                           height: 0;
+                                           min-height: 0;
+                                           overflow: hidden;
+                                           opacity: 0;
+                                           right: 15px;
+                                           top: 52px;
+                                           outline: none;
+                                           border: 1px solid #FF9F00;
+                                           color: #09B3B0;
+                                           font-size: 20px;
+                                           &--inputactive {
+                                               position: absolute;
+                                               width: 380px;
+                                               height: 30px;
+                                               min-height: 5px;
+                                               overflow: visible;
+                                               opacity: 1;
+                                               padding-left: 10px;
+                                               transition: all 0.3s ease;
+                                           }
+                                       }
+                                   }
+                                   &__login {
+                                       width: 99px;
+                                       height: 40px;
+                                       margin-left: 53px;
+                                       padding: 8px 24px;
+                                       display: inline-block;
+                                       background-color: #09B3B0;
+                                       font-family: 'Roboto';
+                                       font-weight: 500;
+                                       font-size: 18px;
+                                       line-height: 23px;
+                                       color: #FFFFFF;
+                                       text-decoration: none;
+                                       &:hover {
+                                           background-color: #FF9F00;
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                       .header-titles {
+                           margin-top: 108px;
+                           @include mq(lg) {
+                               padding-top: 100px;
+                           }
+                           @include mq(md) {
+                               display: flex;
+                               flex-direction: column;
+                               align-items: center;
+                           }
+                           &__container {
+                               max-width: 1506px;
+                               width: 100%;
+                               margin: 0 auto;
+                               padding: 0 15px;
+                           }
+                           &__top {
+                               font-family: 'Winter Insight';
+                               font-weight: 400;
+                               font-size: 135px;
+                               line-height: 96.32%;
+                               color: #FF9F00;
+                               margin-bottom: 67px;
+                               @include mq(md) {
+                                   font-family: 'Winter Insight';
+                                   font-weight: 400;
+                                   font-size: 90px;
+                                   line-height: 96.32%;
+                                   color: #FF9F00;
+                                   margin-bottom: 67px;
+                                   text-align: center;
+                               }
+                           }
+                           &__middle {
+                               font-family: 'Winter Insight';
+                               font-weight: 400;
+                               font-size: 30px;
+                               line-height: 38px;
+                               letter-spacing: 0.1em;
+                               text-transform: uppercase;
+                               color: #000000;
+                               margin-bottom: 22px;
+                               @include mq(md) {
+                                   text-align: center;
+                               }
+                           }
+                           &__bottom {
+                               font-family: 'Yrsa';
+                               font-weight: 400;
+                               font-size: 64px;
+                               line-height: 38px;
+                               letter-spacing: 0.1em;
+                               color: #FF9F00;
+                               @include mq(md) {
+                                   text-align: center;
+                               }
+                           }
+                       }
+                   }
+                   .psychicadvisor-title-wrap {
+                       width: 100%;
+                       .psychicadvisor__title {
+                           width: 100%;
+                           height: 150px;
+                           background: #09B3B0;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           font-family: 'Yrsa';
+                           font-weight: 400;
+                           font-size: 72px;
+                           line-height: 40px;
+                           color: #FFFFFF;
+                           @include mq(xl) {
+                               font-size: 60px;
+                           }
+                           @include mq(lg) {
+                               height: 100px;
+                               font-size: 45px;
+                           }
+                           @include mq(md) {
+                               height: 80px;
+                               font-size: 30px;
+                           }
+                           @include mq(sm) {
+                               height: 60px;
+                               font-size: 25px;
+                           }
+                       }
+                   }
+                   .psychicadvisor-w {
+                       position: relative;
+                       width: 100%;
+                       min-height: 764px;
+                       background: url(../images/psychicadvisor-img.png) no-repeat;
+                       background-size: cover;
+                       .psychicadvisor {
+                           max-width: 1080.5px;
+                           width: 100%;
+                           margin: 58px auto 0px;
+                           &__description {
+                               width: 100%;
+                               display: flex;
+                               justify-content: space-between;
+                               &:not(:first-child) {
+                                   margin-top: 58px;
+                               }
+                               @include mq(xl) {
+                                   flex-direction: column;
+                                   align-items: center;
+                               }
+                           }
+                           &__descriptioncontent {
+                               max-width: 666px;
+                               width: 100%;
+                               display: flex;
+                               justify-content: space-between;
+                               @include mq(lg) {
+                                   flex-direction: column;
+                                   align-items: center;
+                                   padding: 0 15px;
+                               }
+                           }
+                           &__img {
+                               max-width: 150px;
+                               width: 100%;
+                           }
+                           &__contenttitle {
+                               max-width: 458px;
+                               width: 100%;
+                           }
+                           &__subtitle {
+                               font-family: 'Roboto';
+                               font-weight: 400;
+                               font-size: 23px;
+                               line-height: 24px;
+                               color: #008080;
+                               @include mq(lg) {
+                                   text-align: center;
+                                   margin-top: 10px;
+                               }
+                           }
+                           .psychicadvisor__status {
+                               font-family: 'Roboto';
+                               font-weight: 400;
+                               font-size: 16px;
+                               line-height: 16px;
+                               color: #09292F;
+                               margin-top: 16px;
+                           }
+                           &__paragraph {
+                               font-family: 'Roboto';
+                               font-weight: 400;
+                               font-size: 16px;
+                               line-height: 24px;
+                               color: #09292F;
+                               margin-top: 13px;
+                               &:not(:first-child) {
+                                   margin-top: 19px;
+                               }
+                           }
+                           &__services {
+                               max-width: 163px;
+                               width: 100%;
+                               @include mq(xl) {
+                                   margin-top: 20px;
+                               }
+                           }
+                           &__free {
+                               width: 100%;
+                               background: #09B3B0;
+                               border-radius: 3px 0px 0px 3px;
+                               padding: 5px 49px 5px 8px;
+                               font-family: 'Roboto';
+                               font-weight: 400;
+                               font-size: 12px;
+                               line-height: 12px;
+                               color: #FFFFFF;
+                           }
+                           .psychicadvisor__summ {
+                               font-family: 'Roboto';
+                               font-style: normal;
+                               font-weight: 400;
+                               font-size: 22px;
+                               line-height: 22px;
+                               color: #09292F;
+                               margin-top: 6px;
+                           }
+                           &__button {
+                               margin-top: 18px;
+                               &:last-child {
+                                   margin-top: 8px;
+                               }
+                           }
+                           .button {
+                               position: relative;
+                               max-width: 163px;
+                               width: 100%;
+                               display: inline-block;
+                               padding: 9px 30px 13px 62px;
+                               border-radius: 5px;
+                               font-family: 'Roboto';
+                               font-weight: 400;
+                               font-size: 17px;
+                               line-height: 18px;
+                               color: #FFFFFF;
+                               text-decoration: none;
+                               &--icon-phone {
+                                   background: url(../images/img-phone.png) 25px 9px no-repeat;
+                               }
+                               &--color-orange {
+                                   background-color: orange;
+                                   border: 1px solid #FF9F00;
+                               }
+                               &:last-child {
+                                   padding: 9px 24px 13px 56px;
+                               }
+                               &--color-white {
+                                   background: #FFFFFF;
+                                   border: 1px solid #09B3B0;
+                                   color: #09B3B0;
+                               }
+                               &--icon-letter {
+                                   background: url(../images/img-sms.png) 24px 10px no-repeat;
+                               }
+                               &:nth-child(3) {
+                                   padding: 9px 26px 13px 58px;
+                               }
+                               &--icon-chat {
+                                   position: relative;
+                                   display: block;
+                                   &::before {
+                                       content: '';
+                                       position: absolute;
+                                       background: url(../images/img-private.png) no-repeat;
+                                       left: 24.5px;
+                                       top: 10px;
+                                       width: 20px;
+                                       height: 20px;
+                                   }
+                               }
+                               &--color-green {
+                                   background: #09B3B0;
+                                   border: 1px solid #09B3B0;
+                               }
+                           }
+                           &__button-w {
+                               width: 100%;
+                               margin-top: 52px;
+                               display: flex;
+                               justify-content: center;
+                               @include mq(lg) {
+                                   padding: 0px 15px
+                               }
+                               .buttonlong {
+                                   display: inline-block;
+                                   max-width: 255px;
+                                   width: 100%;
+                                   height: 48px;
+                                   font-family: 'Roboto';
+                                   font-weight: 400;
+                                   font-size: 15px;
+                                   line-height: 16px;
+                                   color: #FFFFFF;
+                                   border-radius: 5px;
+                                   display: flex;
+                                   justify-content: center;
+                                   align-items: center;
+                                   text-decoration: none;
+                                   &:last-child {
+                                       position: relative;
+                                       margin-left: 20px;
+                                       @include mq(lg) {}
+                                       &::after {
+                                           content: '';
+                                           position: absolute;
+                                           background: url(../images/icon-bestmatc.png) no-repeat;
+                                           max-width: 118px;
+                                           width: 100%;
+                                           height: 46px;
+                                           right: -130px;
+                                           bottom: 18px;
+                                           @include mq(lg) {
+                                               display: none;
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   }
+                   .contents-wrapper {
+                       width: 100%;
+                       min-height: 1748px;
+                       background: url(../images/Faq__img.png) no-repeat;
+                       background-size: cover;
+                   }
+                   .oracle-w {
+                       width: 100%;
+                       background: #EDF8F9;
+                       .oracle {
+                           max-width: 1050.5px;
+                           width: 100%;
+                           margin: 0 auto;
+                           &__title {
+                               font-family: 'Segoe UI';
+                               font-weight: 400;
+                               font-size: 46px;
+                               line-height: 144px;
+                               text-align: center;
+                               text-transform: uppercase;
+                               color: #3C3935;
+                               @include mq(md) {
+                                   font-size: 40px;
+                                   line-height: 140px;
+                               }
+                               @include mq(sm) {}
+                           }
+                           &__row {
+                               width: 100%;
+                               display: flex;
+                               justify-content: space-between;
+                               @include mq(xl) {
+                                   padding: 0 15px;
+                                   justify-content: space-around;
+                               }
+                               @include mq(lg) {
+                                   flex-direction: column;
+                                   align-items: center;
+                               }
+                           }
+                           &__column {
+                               max-width: 290px;
+                               width: 100%;
+                               &:last-child {
+                                   @include mq(xl) {
+                                       display: none;
+                                   }
+                               }
+                               @include mq(lg) {
+                                   margin-top: 20px;
+                               }
+                           }
+                           .item-oracle {
+                               width: 100%;
+                               &__img {
+                                   margin-left: 80px;
+                               }
+                               &__title {
+                                   font-family: 'Segoe UI';
+                                   font-weight: 400;
+                                   font-size: 24px;
+                                   line-height: 29px;
+                                   color: #0099A8;
+                                   margin-top: 8px;
+                               }
+                               &__text {
+                                   font-family: 'Segoe UI';
+                                   font-size: 14px;
+                                   line-height: 20px;
+                                   letter-spacing: 0.42px;
+                                   color: #3C3935;
+                                   margin-top: 6px;
+                               }
+                               &__link {
+                                   font-family: 'Segoe UI';
+                                   font-weight: 400;
+                                   font-size: 14px;
+                                   line-height: 20px;
+                                   text-align: center;
+                                   letter-spacing: 0.42px;
+                                   color: #0099A8;
+                                   text-decoration: none;
+                                   margin-left: 80px;
+                                   &:hover {
+                                       color: #FF9F00;
+                                   }
+                               }
+                           }
+                       }
+                   }
+                   .faqs-w {
+                       position: relative;
+                       width: 100%;
+                   }
+                   .faqs {
+                       max-width: 1064px;
+                       width: 100%;
+                       margin: 39px auto 0px;
+                       @include mq(xl) {
+                           padding: 0 15px;
+                       }
+                       &__title {
+                           text-align: center;
+                           &:not(:first-child) {
+                               margin-top: 100px;
+                           }
+                       }
+                       .title {
+                           font-family: 'Yrsa';
+                           font-weight: 400;
+                           font-size: 43px;
+                           line-height: 48px;
+                           letter-spacing: 1px;
+                           color: #09292F;
+                       }
+                       &__text {
+                           font-family: 'Roboto';
+                           font-weight: 400;
+                           font-size: 16px;
+                           line-height: 23px;
+                           color: #09292F;
+                           margin-top: 31px;
+                       }
+                       &__row {
+                           max-width: 896px;
+                           width: 100%;
+                           display: flex;
+                           justify-content: space-between;
+                           margin-top: 15px;
+                           @include mq(lg) {
+                               display: flex;
+                               flex-direction: column;
+                               align-items: center;
+                           }
+                       }
+                       &__column {
+                           max-width: 331px;
+                           width: 100%;
+                           @include mq(lg) {
+                               margin-top: 9px;
+                           }
+                       }
+                       .items__faqs {
+                           width: inherit;
+                       }
+                       .nav {
+                           &__list {
+                               list-style: none;
+                           }
+                           &__items:not(:first-child) {
+                               margin-top: 9px;
+                           }
+                           .main__link {
+                               font-family: 'Roboto';
+                               font-weight: 400;
+                               font-size: 15px;
+                               line-height: 23px;
+                               color: #008080;
+                               text-decoration: none;
+                               &:hover {
+                                   color: #FF9F00;
+                               }
+                           }
+                       }
+                       .faqs-button-w {
+                           width: 100%;
+                           display: flex;
+                           justify-content: center;
+                           margin-top: 40px;
+                       }
+                       &__button {
+                           display: inline-block;
+                           max-width: 147px;
+                           width: 100%;
+                           height: 48px;
+                           border: 1px solid #09B3B0;
+                           border-radius: 5px;
+                           font-family: 'Roboto';
+                           font-weight: 400;
+                           font-size: 16px;
+                           line-height: 16px;
+                           color: #09B3B0;
+                           text-decoration: none;
+                           padding: 15px 23px;
+                           &:hover {
+                               background-color: #FF9F00;
+                           }
+                       }
+                   }
+               }
+               
+               .footer-w {
+                   width: 100%;
+               }
+               
+               .footer {
+                   width: inherit;
+                   min-height: 288px;
+                   background-color: #09B3B0;
+                   padding: 50px 0px 52px;
+                   &__body {
+                       max-width: 1187px;
+                       width: 100%;
+                       margin: 0 auto;
+                       display: flex;
+                       justify-content: space-between;
+                       @include mq(xl) {
+                           padding: 0 15px;
+                           flex-direction: column;
+                           align-items: center;
+                       }
+                       @include mq(md) {
+                           align-items: flex-start;
+                       }
+                   }
+                   &__columnleft {
+                       max-width: 440px;
+                       width: 100%;
+                       @include mq(xl) {
+                           margin-left: 100px;
+                       }
+                       @include mq(md) {
+                           margin-left: 0px;
+                           align-items: flex-start;
+                       }
+                   }
+                   .logo-footer {
+                       position: relative;
+                       display: flex;
+                       justify-content: space-between;
+                       max-width: 275px;
+                       width: 100%;
+                       text-decoration: none;
+                       &__items {
+                           display: flex;
+                           flex-direction: column;
+                           justify-content: center;
+                       }
+                       &__title {
+                           font-family: 'Aleo';
+                           font-weight: 400;
+                           font-size: 22px;
+                           line-height: 26px;
+                           color: #FFFFFF;
+                       }
+                       &__link {
+                           font-family: 'Montserrat';
+                           font-weight: 400;
+                           font-size: 13px;
+                           line-height: 24px;
+                           color: #FFFFFF;
+                           text-decoration: none;
+                       }
+                   }
+                   &__copyright {
+                       font-family: 'Montserrat';
+                       font-weight: 400;
+                       font-size: 13px;
+                       line-height: 13px;
+                       color: #FFFFFF;
+                       margin-top: 8px;
+                   }
+                   .footer-columnleft-bottomitems {
+                       margin-top: 52px;
+                   }
+                   &-nav {
+                       &__list {
+                           display: flex;
+                           list-style: none;
+                       }
+                       &__item {
+                           display: block;
+                           position: relative;
+                           &:not(:first-child) {
+                               margin-left: 26.5px;
+                           }
+                           &:first-child::after {
+                               content: '';
+                               position: absolute;
+                               height: 14.24px;
+                               width: 1px;
+                               background: rgba(230, 230, 230, 0.3);
+                               right: -11.8px;
+                               top: 5px;
+                           }
+                       }
+                       &__link {
+                           font-family: 'Montserrat';
+                           font-weight: 400;
+                           font-size: 12px;
+                           line-height: 12px;
+                           letter-spacing: 1px;
+                           text-transform: uppercase;
+                           color: #FFFFFF;
+                           text-decoration: none;
+                       }
+                   }
+                   &__columnright {
+                       max-width: 339px;
+                       width: 100%;
+                       @include mq(xl) {
+                           margin-top: 20px;
+                       }
+                   }
+                   &__social {
+                       position: relative;
+                       max-width: 232px;
+                       width: 100%;
+                       @include mq(md) {
+                           display: flex;
+                           flex-direction: column;
+                           align-items: center;
+                       }
+                   }
+                   &__socialtitle {
+                       font-family: 'Aleo';
+                       font-weight: 400;
+                       font-size: 17px;
+                       line-height: 22px;
+                       color: #FFFFFF;
+                   }
+                   &__socialnetwork {
+                       width: inherit;
+                       display: flex;
+                       justify-content: space-between;
+                       align-items: center;
+                   }
+                   &__paragraf {
+                       font-family: 'Montserrat';
+                       font-weight: 400;
+                       font-size: 13px;
+                       line-height: 24px;
+                       color: #FFFFFF;
+                       margin-top: 32px;
+                   }
+               }
